@@ -1,0 +1,22 @@
+{
+    "name": "paslandau/FixEncodingSubscriber",
+    "description" : "",
+    "authors": [
+        {
+            "name": "Pascal Landau",
+            "email": "kontakt@myseosolution.de",
+            "homepage": "http://www.myseosolution.de",
+            "role": "Developer"
+        }
+    ],
+	"autoload": {
+	    "psr-4": {
+	        "paslandau\\FixEncodingSubscriber\\": "src/"
+	    }
+	},
+    "require" : {
+        "php": "~5.5",
+        "guzzlehttp/guzzle": "~4 | ~5"
+    }
+	
+}
