@@ -1,6 +1,6 @@
 #FixEncodingSubscriber
 
-Plugin for [Guzzle 4](https://github.com/scripts/guzzle) to automatically convert the body of a reponse according to a predefined charset.
+Plugin for [Guzzle 4/5](https://github.com/scripts/guzzle) to automatically convert the body of a reponse according to a predefined charset.
 
 ##Description
 
@@ -13,6 +13,7 @@ ISO-8859-1 is still widely used and it really messes up the content of an HTTP r
 UTF-8. So I decided to write this little plugin to convert any input encoding automatically to another output encoding. Headers and meta tags can be optionally adjusted as well.
 
 ###Basic Usage
+```php
 
     $client = new Client();
     $converter = new EncodingConverter("utf-8"); // define desired output encoding
@@ -21,6 +22,7 @@ UTF-8. So I decided to write this little plugin to convert any input encoding au
     $req = $client->createRequest("GET", $url);
     $req->getEmitter()->attach($sub);
     $resp = $client->send($req);
+```
 
 ##Requirements
 
@@ -36,18 +38,27 @@ The recommended way to install FixEncodingSubscriber is through [Composer](http:
 Next, update your project's composer.json file to include FixEncodingSubscriber:
 
     {
+        "repositories": [
+            {
+                "type": "git",
+                "url": "https://github.com/paslandau/FixEncodingSubscriber.git"
+            }
+        ],
         "require": {
-            "paslandau/FixEncodingSubscriber": "~0.1"
+             "paslandau/FixEncodingSubscriber": "~0"
         }
     }
 
 After installing, you need to require Composer's autoloader:
+```php
 
     require 'vendor/autoload.php';
+```
 
 ##Examples
 
 Let's have a look a the differences between a 'normal' guzzle request and a request with a FixEncodingSubscriber at first:
+```php
 
     $client = new Client();
     $converter = new EncodingConverter("utf-8",true,true); // define desired output encoding
@@ -69,6 +80,7 @@ Let's have a look a the differences between a 'normal' guzzle request and a requ
         echo "    Content-Type: " . $resp->getHeader("content-type") . "\n\n";
         echo $resp->getBody()."\n\n";
     }
+```
     
 **Output (assuming your editor uses UTF-8 as default)**
 
@@ -115,6 +127,7 @@ The behaviour of the plugin can be modified as follows:
 ###Adjust the `content-type` header
 By default, the `content-type` header is adjusted when the FixEncodingSubscriber converts the body of a request into another encoding. 
 You can prevent this behaviour by setting the `$replaceHeaders` parameter to `false`:
+```php
 
     $client = new Client();
     $replaceHeaders = false; // prevent the replacement of the content-type header
@@ -124,10 +137,12 @@ You can prevent this behaviour by setting the `$replaceHeaders` parameter to `fa
     $req = $client->createRequest("GET", $url);
     $req->getEmitter()->attach($sub);
     $resp = $client->send($req);
+```
 
 ###Adjust the `meta` tags
 By default, the content of a document is _not_ modified (apart from being converted into another encoding). You can explicitly force the FixEncodingSubscriber
 to adjust the `meta` tags within a document to reflect the new encoding by setting the `$replaceContent` parameter to `true`:
+```php
 
     $client = new Client();
     $replaceHeaders = null; // default
@@ -138,7 +153,8 @@ to adjust the `meta` tags within a document to reflect the new encoding by setti
     $req = $client->createRequest("GET", $url);
     $req->getEmitter()->attach($sub);
     $resp = $client->send($req);
-    
+```
+   
 Currently, 3 different cases are handled/recognized:
 
 - HTML 4 (uses `<meta http-equiv='content-type' content='text/html; charset=utf-8'>`)
@@ -148,6 +164,7 @@ Currently, 3 different cases are handled/recognized:
 ###Forcing a default input encoding
 Some websites use no (or wrong) values for the `content-type` header or the `meta` tags. In those cases, the FixEncodingSubscriber can be configured to 
 assume a default encoding:
+```php
 
     $client = new Client();
     $replaceHeaders = null; // default
@@ -159,6 +176,7 @@ assume a default encoding:
     $req = $client->createRequest("GET", $url);
     $req->getEmitter()->attach($sub);
     $resp = $client->send($req);
+```
 
 ##Related plugins
 
