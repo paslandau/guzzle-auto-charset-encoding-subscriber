@@ -7,8 +7,8 @@
  */
 
 use GuzzleHttp\Client;
-use paslandau\FixEncodingSubscriber\EncodingConverter;
-use paslandau\FixEncodingSubscriber\FixEncodingSubscriber;
+use paslandau\GuzzleAutoCharsetEncodingSubscriber\EncodingConverter;
+use paslandau\GuzzleAutoCharsetEncodingSubscriber\GuzzleAutoCharsetEncodingSubscriber;
 
 require_once __DIR__.'/../../../vendor/autoload.php';
 
@@ -22,7 +22,7 @@ $client = new Client();
 $replaceHeader = true;
 $replaceContent = true;
 $encodingConverter = new EncodingConverter("utf-8",$replaceHeader,$replaceContent);
-$sub = new FixEncodingSubscriber($encodingConverter);
+$sub = new GuzzleAutoCharsetEncodingSubscriber($encodingConverter);
 foreach($urls as $url) {
     $req = $client->createRequest("GET", $url);
     $req->getEmitter()->attach($sub);

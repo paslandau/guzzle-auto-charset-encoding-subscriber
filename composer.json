@@ -1,5 +1,5 @@
 {
-    "name": "paslandau/FixEncodingSubscriber",
+    "name": "paslandau/GuzzleAutoCharsetEncodingSubscriber",
     "description" : "",
     "authors": [
         {
@@ -11,12 +11,11 @@
     ],
 	"autoload": {
 	    "psr-4": {
-	        "paslandau\\FixEncodingSubscriber\\": "src/"
+	        "paslandau\\GuzzleAutoCharsetEncodingSubscriber\\": "src/"
 	    }
 	},
     "require" : {
         "php": "~5.5",
         "guzzlehttp/guzzle": "~4 | ~5"
     }
-	
 }

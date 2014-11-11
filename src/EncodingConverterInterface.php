@@ -6,7 +6,7 @@
  * Time: 14:57
  */
 
-namespace paslandau\FixEncodingSubscriber;
+namespace paslandau\GuzzleAutoCharsetEncodingSubscriber;
 
 
 interface EncodingConverterInterface {

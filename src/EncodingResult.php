@@ -6,7 +6,7 @@
  * Time: 21:46
  */
 
-namespace paslandau\FixEncodingSubscriber;
+namespace paslandau\GuzzleAutoCharsetEncodingSubscriber;
 
 
 class EncodingResult{

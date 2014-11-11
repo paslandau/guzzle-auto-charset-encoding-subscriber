@@ -6,7 +6,7 @@
  * Time: 16:44
  */
 
-namespace paslandau\FixEncodingSubscriber;
+namespace paslandau\GuzzleAutoCharsetEncodingSubscriber;
 
 /**
  * HTTP Headers Util - Header value parsing utility functions

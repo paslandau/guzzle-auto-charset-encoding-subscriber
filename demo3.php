@@ -7,28 +7,28 @@
  */
 
 use GuzzleHttp\Client;
-use paslandau\FixEncodingSubscriber\EncodingConverter;
-use paslandau\FixEncodingSubscriber\FixEncodingSubscriber;
+use paslandau\GuzzleAutoCharsetEncodingSubscriber\EncodingConverter;
+use paslandau\GuzzleAutoCharsetEncodingSubscriber\GuzzleAutoCharsetEncodingSubscriber;
 
 require_once __DIR__.'/../../../vendor/autoload.php';
 
 $client = new Client();
 $converter = new EncodingConverter("utf-8",true,true); // define desired output encoding and replace nothing
-$sub = new FixEncodingSubscriber($converter);
+$sub = new GuzzleAutoCharsetEncodingSubscriber($converter);
 $converter = new EncodingConverter("utf-8",true,false); // define desired output encoding and replace only headers
-$sub1 = new FixEncodingSubscriber($converter);
+$sub1 = new GuzzleAutoCharsetEncodingSubscriber($converter);
 $converter = new EncodingConverter("utf-8",false,true); // define desired output encoding and replace only content
-$sub2 = new FixEncodingSubscriber($converter);
+$sub2 = new GuzzleAutoCharsetEncodingSubscriber($converter);
 $converter = new EncodingConverter("utf-8",true,true); // define desired output encoding and replace headers & content
-$sub3 = new FixEncodingSubscriber($converter);
+$sub3 = new GuzzleAutoCharsetEncodingSubscriber($converter);
 $url = "http://www.myseosolution.de/scripts/encoding-test.php?enc=iso";
 
 $tests = [
     "Using unmodified Guzzle request" => null,
-    "Using FixEncodingSubscriber and replace nothing" => $sub,
-    "Using FixEncodingSubscriber and replace headers" => $sub1,
-    "Using FixEncodingSubscriber and replace meta tags" => $sub2,
-    "Using FixEncodingSubscriber and replace headers and meta tags" => $sub3,
+    "Using GuzzleAutoCharsetEncodingSubscriber and replace nothing" => $sub,
+    "Using GuzzleAutoCharsetEncodingSubscriber and replace headers" => $sub1,
+    "Using GuzzleAutoCharsetEncodingSubscriber and replace meta tags" => $sub2,
+    "Using GuzzleAutoCharsetEncodingSubscriber and replace headers and meta tags" => $sub3,
 ];
 foreach($tests as $name => $subscriber) {
     $req = $client->createRequest("GET", $url);
