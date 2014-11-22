@@ -170,7 +170,7 @@ assume a default encoding:
     $replaceHeaders = null; // default
     $replaceContent = null; // default
     $fixedInputEncoding = "iso-8859-1"; // assume "iso-8859-1" as default encoding
-    $converter = new EncodingConverter("utf-8",$replaceHeaders, $replaceContent);
+    $converter = new EncodingConverter("utf-8",$replaceHeaders, $replaceContent,$fixedInputEncoding);
     $sub = new GuzzleAutoCharsetEncodingSubscriber($converter);
     $url = "http://www.myseosolution.de/scripts/encoding-test.php?enc=iso&header=false&meta=false"; // hide charset from header and meta tags
     $req = $client->createRequest("GET", $url);

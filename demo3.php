@@ -13,7 +13,7 @@ use paslandau\GuzzleAutoCharsetEncodingSubscriber\GuzzleAutoCharsetEncodingSubsc
 require_once __DIR__.'/../../../vendor/autoload.php';
 
 $client = new Client();
-$converter = new EncodingConverter("utf-8",true,true); // define desired output encoding and replace nothing
+$converter = new EncodingConverter("utf-8",false,false); // define desired output encoding and replace nothing
 $sub = new GuzzleAutoCharsetEncodingSubscriber($converter);
 $converter = new EncodingConverter("utf-8",true,false); // define desired output encoding and replace only headers
 $sub1 = new GuzzleAutoCharsetEncodingSubscriber($converter);
