@@ -1,16 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Hirnhamster
- * Date: 14.10.2014
- * Time: 17:11
- */
-
 use GuzzleHttp\Client;
 use paslandau\GuzzleAutoCharsetEncodingSubscriber\EncodingConverter;
 use paslandau\GuzzleAutoCharsetEncodingSubscriber\GuzzleAutoCharsetEncodingSubscriber;
 
-require_once __DIR__.'/../../../vendor/autoload.php';
+require_once __DIR__ . '/demo-bootstrap.php';
 
 $client = new Client();
 $converter = new EncodingConverter("utf-8"); // define desired output encoding
