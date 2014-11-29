@@ -1,3 +1,8 @@
+###0.0.4
+
+- moved encoding converter to paslandau/WebUtility and updated composer.json
+- added tests and travis config
+
 ###0.0.3
 
 - added changelog

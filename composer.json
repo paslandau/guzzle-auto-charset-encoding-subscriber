@@ -1,6 +1,7 @@
 {
     "name": "paslandau/GuzzleAutoCharsetEncodingSubscriber",
-    "description" : "",
+    "license": "MIT",
+    "description" : "Plugin for Guzzle 4/5 to automatically convert the body of a reponse according to a predefined charset.",
     "authors": [
         {
             "name": "Pascal Landau",
@@ -14,8 +15,16 @@
 	        "paslandau\\GuzzleAutoCharsetEncodingSubscriber\\": "src/"
 	    }
 	},
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/paslandau/WebUtility.git"
+        }
+    ],
     "require" : {
         "php": "~5.5",
+        "ext-mbstring": "*",
+        "paslandau/WebUtility": "~0",
         "guzzlehttp/guzzle": "~4 | ~5"
     }
 }

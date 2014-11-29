@@ -5,7 +5,8 @@ use GuzzleHttp\Event\EndEvent;
 use GuzzleHttp\Event\ErrorEvent;
 use GuzzleHttp\Event\SubscriberInterface;
 use GuzzleHttp\Stream\Stream;
-use paslandau\Utility\ExceptionUtil;
+use paslandauExceptionUtility\ExceptionUtil;
+use paslandau\WebUtility\EncodingConversion\EncodingConverterInterface;
 
 /**
  * Created by PhpStorm.

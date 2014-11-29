@@ -1,7 +1,7 @@
 <?php
 use GuzzleHttp\Client;
-use paslandau\GuzzleAutoCharsetEncodingSubscriber\EncodingConverter;
 use paslandau\GuzzleAutoCharsetEncodingSubscriber\GuzzleAutoCharsetEncodingSubscriber;
+use paslandau\WebUtility\EncodingConversion\EncodingConverter;
 
 require_once __DIR__ . '/demo-bootstrap.php';
 
