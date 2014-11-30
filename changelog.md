@@ -1,3 +1,7 @@
+## 0.1.0
+
+ - changed package name from GuzzleAutoCharsetEncodingSubscriber to guzzle-auto-charset-encoding-subscriber
+
 ###0.0.4
 
 - moved encoding converter to paslandau/WebUtility and updated composer.json
