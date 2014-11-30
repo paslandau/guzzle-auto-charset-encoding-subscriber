@@ -15,16 +15,12 @@
 	        "paslandau\\GuzzleAutoCharsetEncodingSubscriber\\": "src/"
 	    }
 	},
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/paslandau/web-utility.git"
-        }
-    ],
+    "repositories": [ { "type": "composer", "url": "http://packages.myseosolution.de/"} ],
+    "minimum-stability": "dev",
     "require" : {
         "php": "~5.5",
         "ext-mbstring": "*",
-        "paslandau/web-utility": "~0",
+        "paslandau/web-utility": "dev-master",
         "guzzlehttp/guzzle": "~4 | ~5"
     }
 }

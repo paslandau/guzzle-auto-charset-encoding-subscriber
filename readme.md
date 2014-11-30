@@ -38,14 +38,10 @@ The recommended way to install guzzle-auto-charset-encoding-subscriber is throug
 Next, update your project's composer.json file to include GuzzleAutoCharsetEncodingSubscriber:
 
     {
-        "repositories": [
-            {
-                "type": "git",
-                "url": "https://github.com/paslandau/guzzle-auto-charset-encoding-subscriber.git"
-            }
-        ],
+        "repositories": [ { "type": "composer", "url": "http://packages.myseosolution.de/"} ],
+        "minimum-stability": "dev",
         "require": {
-             "paslandau/guzzle-auto-charset-encoding-subscriber": "~0"
+             "paslandau/guzzle-auto-charset-encoding-subscriber": "dev-master"
         }
     }
 
