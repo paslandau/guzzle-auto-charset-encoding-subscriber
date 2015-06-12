@@ -1,8 +1,16 @@
-## 0.1.1
+#todo
+
+#dev-master
+
+##0.1.2
+
+ - updated dependencies (Guzzle ^5.3; WebUtil ^0.2; PHPUnit ~4)
+
+##0.1.1
 
  - updated repositories to local satis installation
 
-## 0.1.0
+##0.1.0
 
  - changed package name from GuzzleAutoCharsetEncodingSubscriber to guzzle-auto-charset-encoding-subscriber
 

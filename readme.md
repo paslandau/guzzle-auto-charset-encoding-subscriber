@@ -1,4 +1,5 @@
 #guzzle-auto-charset-encoding-subscriber
+[![Build Status](https://travis-ci.org/paslandau/guzzle-auto-charset-encoding-subscriber.svg?branch=master)](https://travis-ci.org/paslandau/guzzle-auto-charset-encoding-subscriber)
 
 Plugin for [Guzzle 4/5](https://github.com/scripts/guzzle) to automatically convert the body of a reponse according to a predefined charset.
 
