@@ -20,7 +20,7 @@
     "require" : {
         "php": "~5.5|~7",
         "ext-mbstring": "*",
-        "paslandau/web-utility": "^0.2",
+        "paslandau/web-utility": "~0.7",
         "guzzlehttp/guzzle": "^5.3"
     },
     "require-dev" : {
