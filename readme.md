@@ -1,9 +1,15 @@
-#guzzle-auto-charset-encoding-subscriber
+# DEPRECATED ⛔ 
+
+This repository has been deprecated as of 2019-01-27. That code was written a long time ago and has been unmaintained for several years. Thus, repository will now be [archived](https://github.blog/2017-11-08-archiving-repositories/).If you are interested in taking over ownership, feel free to [contact me](https://www.pascallandau.com/about/).
+
+---
+
+# guzzle-auto-charset-encoding-subscriber
 [![Build Status](https://travis-ci.org/paslandau/guzzle-auto-charset-encoding-subscriber.svg?branch=master)](https://travis-ci.org/paslandau/guzzle-auto-charset-encoding-subscriber)
 
 Plugin for [Guzzle 4/5](https://github.com/scripts/guzzle) to automatically convert the body of a reponse according to a predefined charset.
 
-##Description
+## Description
 
 Getting charsets right is hard. In a perfect world, everybody would use unicode (UTF-8) as character encoding for textual web content but that's just not 
 gonna happen in the near future, so we have to deal with a lot of different encodings in the wild. Unfortunately that's another layer of complexity on top 
@@ -13,7 +19,7 @@ I'm using Guzzle as an underlying library for dealing with HTTP requests and my 
 ISO-8859-1 is still widely used and it really messes up the content of an HTTP response, because Guzzle won't automatically convert ISO-8859-1 to my internally used
 UTF-8. So I decided to write this little plugin to convert any input encoding automatically to another output encoding. Headers and meta tags can be optionally adjusted as well.
 
-###Basic Usage
+### Basic Usage
 ```php
 
     $client = new Client();
@@ -25,12 +31,12 @@ UTF-8. So I decided to write this little plugin to convert any input encoding au
     $resp = $client->send($req);
 ```
 
-##Requirements
+## Requirements
 
 - PHP >= 5.5 with [mbstring extension](http://php.net/manual/de/book.mbstring.php)
 - Guzzle >= 4.0
 
-##Installation
+## Installation
 
 The recommended way to install guzzle-auto-charset-encoding-subscriber is through [Composer](http://getcomposer.org/).
 
@@ -59,7 +65,7 @@ After installing, you need to require Composer's autoloader:
     require 'vendor/autoload.php';
 ```
 
-##Examples
+## Examples
 
 Let's have a look a the differences between a 'normal' guzzle request and a request with a guzzle-auto-charset-encoding-subscriber at first:
 ```php
@@ -128,7 +134,7 @@ subsequent components, the plugin also adjusted the `content-type` header and th
 
 The behaviour of the plugin can be modified as follows:
 
-###Adjust the `content-type` header
+### Adjust the `content-type` header
 By default, the `content-type` header is adjusted when the guzzle-auto-charset-encoding-subscriber converts the body of a request into another encoding. 
 You can prevent this behaviour by setting the `$replaceHeaders` parameter to `false`:
 ```php
@@ -143,7 +149,7 @@ You can prevent this behaviour by setting the `$replaceHeaders` parameter to `fa
     $resp = $client->send($req);
 ```
 
-###Adjust the `meta` tags
+### Adjust the `meta` tags
 By default, the content of a document is _not_ modified (apart from being converted into another encoding). You can explicitly force the guzzle-auto-charset-encoding-subscriber
 to adjust the `meta` tags within a document to reflect the new encoding by setting the `$replaceContent` parameter to `true`:
 ```php
@@ -165,7 +171,7 @@ Currently, 3 different cases are handled/recognized:
 - HTML 5 (uses `<meta charset='utf-8'>`)
 - XML (uses `<?xml version='1.0' encoding='utf-8' ?>`)
 
-###Forcing a default input encoding
+### Forcing a default input encoding
 Some websites use no (or wrong) values for the `content-type` header or the `meta` tags. In those cases, the guzzle-auto-charset-encoding-subscriber can be configured to 
 assume a default encoding:
 ```php
@@ -182,13 +188,13 @@ assume a default encoding:
     $resp = $client->send($req);
 ```
 
-##Related plugins
+## Related plugins
 
 - [guzzle4-charset-subscriber](https://github.com/sasezaki/guzzle4-charset-subscriber) [Guzzle 4]
 - [guzzle-plugin-AutoCharsetEncodingPlugin](https://github.com/diggin/guzzle-plugin-AutoCharsetEncodingPlugin) [Guzzle 3]
 - [ForceCharsetPlugin](https://gist.github.com/pschultz/6554265) [Guzzle 3]
 
-##Frequently searched questions
+## Frequently searched questions
 
 - How to change the reponse charset/encoding in Guzzle?
 - How to convert the charset/encoding of an response in Guzzle?
